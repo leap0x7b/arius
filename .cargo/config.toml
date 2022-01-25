@@ -1,0 +1,8 @@
+[target.'cfg(target_os = "none")']
+runner = "cargo run --package runner --"
+
+[alias]
+kbuild = "build --target .cargo/x86_64-arius.json -Zbuild-std=core,compiler_builtins,alloc -Zbuild-std-features=compiler-builtins-mem"
+kimage = "run --target .cargo/x86_64-arius.json -Zbuild-std=core -Zbuild-std-features=compiler-builtins-mem -- --no-run"
+krun = "run --target .cargo/x86_64-arius.json -Zbuild-std=core -Zbuild-std-features=compiler-builtins-mem"
+ktest = "test --target .cargo/x86_64-arius.json -Zbuild-std=core -Zbuild-std-features=compiler-builtins-mem"
